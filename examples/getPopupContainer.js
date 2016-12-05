@@ -3,12 +3,12 @@ webpackJsonp([3],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(333);
+	module.exports = __webpack_require__(338);
 
 
 /***/ },
 
-/***/ 333:
+/***/ 338:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17,21 +17,21 @@ webpackJsonp([3],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(35);
+	var _reactDom = __webpack_require__(33);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcSelect = __webpack_require__(173);
+	var _rcSelect = __webpack_require__(179);
 	
 	var _rcSelect2 = _interopRequireDefault(_rcSelect);
 	
-	__webpack_require__(322);
+	__webpack_require__(327);
 	
-	var _rcDialog = __webpack_require__(334);
+	var _rcDialog = __webpack_require__(339);
 	
 	var _rcDialog2 = _interopRequireDefault(_rcDialog);
 	
-	__webpack_require__(338);
+	__webpack_require__(343);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -119,7 +119,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 334:
+/***/ 339:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -132,11 +132,11 @@ webpackJsonp([3],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Dialog = __webpack_require__(335);
+	var _Dialog = __webpack_require__(340);
 	
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 	
-	var _getContainerRenderMixin = __webpack_require__(317);
+	var _getContainerRenderMixin = __webpack_require__(322);
 	
 	var _getContainerRenderMixin2 = _interopRequireDefault(_getContainerRenderMixin);
 	
@@ -199,7 +199,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 335:
+/***/ 340:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -212,23 +212,23 @@ webpackJsonp([3],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(35);
+	var _reactDom = __webpack_require__(33);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _KeyCode = __webpack_require__(218);
+	var _KeyCode = __webpack_require__(224);
 	
 	var _KeyCode2 = _interopRequireDefault(_KeyCode);
 	
-	var _rcAnimate = __webpack_require__(266);
+	var _rcAnimate = __webpack_require__(272);
 	
 	var _rcAnimate2 = _interopRequireDefault(_rcAnimate);
 	
-	var _LazyRenderBox = __webpack_require__(336);
+	var _LazyRenderBox = __webpack_require__(341);
 	
 	var _LazyRenderBox2 = _interopRequireDefault(_LazyRenderBox);
 	
-	var _getScrollBarSize = __webpack_require__(337);
+	var _getScrollBarSize = __webpack_require__(342);
 	
 	var _getScrollBarSize2 = _interopRequireDefault(_getScrollBarSize);
 	
@@ -342,7 +342,7 @@ webpackJsonp([3],{
 	        this.props.afterClose();
 	    },
 	    onMaskClick: function onMaskClick(e) {
-	        if (e.target === e.currentTarget && this.props.maskClosable) {
+	        if (e.target === e.currentTarget) {
 	            this.close(e);
 	        }
 	    },
@@ -392,7 +392,7 @@ webpackJsonp([3],{
 	        }
 	        var style = (0, _objectAssign2["default"])({}, props.style, dest);
 	        var transitionName = this.getTransitionName();
-	        var dialogElement = _react2["default"].createElement(_LazyRenderBox2["default"], { role: "document", ref: "dialog", style: style, className: prefixCls + ' ' + (props.className || ''), visible: props.visible }, _react2["default"].createElement("div", { className: prefixCls + '-content' }, closer, header, _react2["default"].createElement("div", __assign({ className: prefixCls + '-body', style: props.bodyStyle, ref: "body" }, props.bodyProps), props.children), footer), _react2["default"].createElement("div", { tabIndex: 0, ref: "sentinel", style: { width: 0, height: 0, overflow: 'hidden' } }, "sentinel"));
+	        var dialogElement = _react2["default"].createElement(_LazyRenderBox2["default"], { key: "dialog-element", role: "document", ref: "dialog", style: style, className: prefixCls + ' ' + (props.className || ''), visible: props.visible }, _react2["default"].createElement("div", { className: prefixCls + '-content' }, closer, header, _react2["default"].createElement("div", __assign({ className: prefixCls + '-body', style: props.bodyStyle, ref: "body" }, props.bodyProps), props.children), footer), _react2["default"].createElement("div", { tabIndex: 0, ref: "sentinel", style: { width: 0, height: 0, overflow: 'hidden' } }, "sentinel"));
 	        return _react2["default"].createElement(_rcAnimate2["default"], { key: "dialog", showProp: "visible", onLeave: this.onAnimateLeave, transitionName: transitionName, component: "", transitionAppear: true }, dialogElement);
 	    },
 	    getZIndexStyle: function getZIndexStyle() {
@@ -414,7 +414,7 @@ webpackJsonp([3],{
 	        var maskElement = void 0;
 	        if (props.mask) {
 	            var maskTransition = this.getMaskTransitionName();
-	            maskElement = _react2["default"].createElement(_LazyRenderBox2["default"], { style: this.getMaskStyle(), key: "mask", className: props.prefixCls + '-mask', hiddenClassName: props.prefixCls + '-mask-hidden', visible: props.visible });
+	            maskElement = _react2["default"].createElement(_LazyRenderBox2["default"], __assign({ style: this.getMaskStyle(), key: "mask", className: props.prefixCls + '-mask', hiddenClassName: props.prefixCls + '-mask-hidden', visible: props.visible }, props.maskProps));
 	            if (maskTransition) {
 	                maskElement = _react2["default"].createElement(_rcAnimate2["default"], { key: "mask", showProp: "visible", transitionAppear: true, component: "", transitionName: maskTransition }, maskElement);
 	            }
@@ -497,14 +497,16 @@ webpackJsonp([3],{
 	    },
 	    render: function render() {
 	        var props = this.props;
-	        var prefixCls = props.prefixCls;
+	        var prefixCls = props.prefixCls,
+	            maskClosable = props.maskClosable;
+	
 	        var style = this.getWrapStyle();
 	        // clear hide display
 	        // and only set display after async anim, not here for hide
 	        if (props.visible) {
 	            style.display = null;
 	        }
-	        return _react2["default"].createElement("div", null, this.getMaskElement(), _react2["default"].createElement("div", __assign({ tabIndex: -1, onKeyDown: this.onKeyDown, className: prefixCls + '-wrap ' + (props.wrapClassName || ''), ref: "wrap", onClick: this.onMaskClick, role: "dialog", "aria-labelledby": props.title ? this.titleId : null, style: style }, props.wrapProps), this.getDialogElement()));
+	        return _react2["default"].createElement("div", null, this.getMaskElement(), _react2["default"].createElement("div", __assign({ tabIndex: -1, onKeyDown: this.onKeyDown, className: prefixCls + '-wrap ' + (props.wrapClassName || ''), ref: "wrap", onMouseDown: maskClosable ? this.onMaskClick : undefined, onTouchStart: maskClosable ? this.onMaskClick : undefined, role: "dialog", "aria-labelledby": props.title ? this.titleId : null, style: style }, props.wrapProps), this.getDialogElement()));
 	    }
 	});
 	exports["default"] = Dialog;
@@ -512,7 +514,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 336:
+/***/ 341:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -563,7 +565,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 337:
+/***/ 342:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -611,8 +613,8 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 338:
-322
+/***/ 343:
+327
 
 });
 //# sourceMappingURL=getPopupContainer.js.map
